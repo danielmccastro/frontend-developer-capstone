@@ -2,7 +2,8 @@ import React from "react";
 
 function Main() {
     return (
-        <main>
+        <main className="main-content">
+            <section className="hero-section">AAAA</section>
            <p>MAIN</p>
         </main>
     )

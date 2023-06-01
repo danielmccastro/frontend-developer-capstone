@@ -1,10 +1,11 @@
 import React from "react";
+import LittleLemonLogo from "../assets/Logo.png"
 
 function Header() {
   return (
-    <header>
-      <img></img>
-      <nav>
+    <header className="header">
+      <img className="header-logo" src={LittleLemonLogo} alt="Little Lemon Logo" />
+      <nav className="navbar">
         <ul>
           <li>
             <a href="">Home</a>
