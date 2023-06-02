@@ -179,6 +179,10 @@
   cursor: pointer;
 }
 
+.about-description {
+  margin: 2rem 5rem;
+  width: 70%;
+}
 
 .testimonials {
   display: flex;
@@ -200,7 +204,6 @@
 
 .testimonials-img {
   padding: 1.5rem;
-
   margin: 1rem;
   border-radius: 50%;
   max-width: 100%;
@@ -224,12 +227,43 @@
 
 .about-img {
   width: 100%;
-  margin: 2rem 5rem;
+  margin: 2rem;
   border-radius: 20px;
   filter: drop-shadow(16px 16px 10px rgba(0, 0, 0, 0.35));
 }
 
 .footer {
+  padding: 2.5rem 10rem;
   width: 100vw;
   background-color: #495E57;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.footer-title {
+  margin-bottom: 1rem;
+  font-weight: bolder;
+  color: white;
+}
+
+.footer-link {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  margin: .25rem 0;
+}
+
+.footer-link:hover {
+  font-weight: bold;
+}
+
+.footer-text {
+    display: block;
+  text-decoration: none;
+  color: #fff;
+  margin: .25rem 0;
+}
+
+.footer-img {
+  width: 100px;
 }

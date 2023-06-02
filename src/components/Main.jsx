@@ -116,7 +116,7 @@ function Main() {
       </section>
 
       <section className="about-section">
-        <span className="hero-description">
+        <span className="about-description">
           <h1 className="text-h1 text-black">Little Lemon</h1>
           <h4 className="text-h4 text-black">Chicago</h4>
           <p className="text-p text-black">
@@ -128,7 +128,7 @@ function Main() {
             incidunt necessitatibus. Temporibus.
           </p>
         </span>
-        <img href={marioAndAdrian} alt="Mario and Adrian" className="about-img" />
+        <img src={marioAndAdrian} alt="Mario and Adrian" className="about-img" />
       </section>
     </main>
   );
