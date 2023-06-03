@@ -7,31 +7,6 @@
   box-sizing: border-box;
 }
 
-.header {
-  background-color: #fff;
-  height: 10vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header-logo {
-  margin-left: 70px;
-  justify-content: start;
-}
-
-.navbar {
-  width: 100%;
-  display: flex;
-  justify-content: end;
-}
-
-.navbar > ul {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-}
-
 .navbar li {
   display: flex;
   font-family: "Karla";
@@ -47,6 +22,7 @@
   color: #F4CE14;
 }
 
+/*
 .main-content {
   background-color: #FFF;
 }
@@ -267,3 +243,4 @@
 .footer-img {
   width: 100px;
 }
+*/
