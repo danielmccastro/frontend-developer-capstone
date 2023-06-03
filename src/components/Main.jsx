@@ -10,9 +10,9 @@ import marioAndAdrian from "../assets/marioandadrian.jpg"
 
 function Main() {
   return (
-    <main className="main-content">
-      <section className="hero-section bg-green">
-        <span className="hero-description">
+    <main>
+      <section className="row hero-section bg-green">
+        <span className="col hero-description">
           <h1 className="text-h1">Little Lemon</h1>
           <h4 className="text-h4">Chicago</h4>
           <p className="text-p">
@@ -24,12 +24,12 @@ function Main() {
             <button className="btn">Reserve a table</button>
           </a>
         </span>
-        <img src={restaurantImg} alt="Restaurant image" className="hero-img" />
+        <img src={restaurantImg} alt="Restaurant image" className="hero-img col" />
       </section>
-      <section>
-        <h4 className="text-h4 color-black">Specials</h4>
-        <div className="specials">
-          <div className="card-specials">
+      <section className="row">
+        <h4 className="col-12 text-center">Specials</h4>
+        <div className="specials row">
+          <div className="card-specials col">
             <img src={foodSalad} alt="Salad" className="card-img" />
             <div className="card-body">
               <p className="card-title">Greek Salad</p>
@@ -42,7 +42,7 @@ function Main() {
             </p>
             <button className="btn-order">Order now</button>
           </div>
-          <div className="card-specials">
+          <div className="card-specials col">
             <img src={foodMain} alt="Main" className="card-img" />
             <div className="card-body">
               <p className="card-title">Bruschetta</p>
@@ -55,7 +55,7 @@ function Main() {
             </p>
             <button className="btn-order">Order now</button>
           </div>
-          <div className="card-specials">
+          <div className="card-specials col">
             <img src={foodDessert} alt="Dessert" className="card-img" />
             <div className="card-body">
               <p className="card-title">Lemon cake</p>
@@ -70,15 +70,15 @@ function Main() {
           </div>
         </div>
       </section>
-      <section className="bg-green">
-        <h4 className="text-h4 color-white">Testimonials</h4>
-        <div className="testimonials">
-          <div className="card-testimonials">
+      <section className="bg-green row">
+        <h4 className="col-12 text-center">Testimonials</h4>
+        <div className="testimonials row">
+          <div className="col">
             <h4 className="testimonials-title">★ 4.9</h4>
             <img
               src={pictureOne}
               alt="First review photo"
-              className="testimonials-img"
+              className="card-img"
             />
             <p className="card-content">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -86,12 +86,12 @@ function Main() {
               vitae laborum consequuntur voluptatum.
             </p>
           </div>
-          <div className="card-testimonials">
+          <div className="card-testimonials col">
             <h4 className="testimonials-title">★ 5.0</h4>
             <img
               src={pictureTwo}
               alt="Second review photo"
-              className="testimonials-img"
+              className="card-img"
             />
             <p className="card-content">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -99,12 +99,12 @@ function Main() {
               vitae laborum consequuntur voluptatum.
             </p>
           </div>
-          <div className="card-testimonials">
+          <div className="card-testimonials col">
             <h4 className="testimonials-title">★ 4.7</h4>
             <img
               src={pictureThree}
               alt="Third review photo"
-              className="testimonials-img"
+              className="card-img"
             />
             <p className="card-content">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -114,12 +114,11 @@ function Main() {
           </div>
         </div>
       </section>
-
-      <section className="about-section">
-        <span className="about-description">
-          <h1 className="text-h1 text-black">Little Lemon</h1>
-          <h4 className="text-h4 text-black">Chicago</h4>
-          <p className="text-p text-black">
+      <section className="row">
+        <span className="col">
+          <h1 className="">Little Lemon</h1>
+          <h4 className="">Chicago</h4>
+          <p className="">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe,
             eos, non natus qui enim debitis deleniti, sunt sint modi eveniet
             ipsum. Dolores, impedit. Molestias, eos beatae, velit sed blanditiis
@@ -128,7 +127,7 @@ function Main() {
             incidunt necessitatibus. Temporibus.
           </p>
         </span>
-        <img src={marioAndAdrian} alt="Mario and Adrian" className="about-img" />
+        <img src={marioAndAdrian} alt="Mario and Adrian" className="col" />
       </section>
     </main>
   );
