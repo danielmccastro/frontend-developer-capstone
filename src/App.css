@@ -207,13 +207,11 @@
   border-radius: 20px;
   filter: drop-shadow(16px 16px 10px rgba(0, 0, 0, 0.35));
 }
+*/
 
 .footer {
-  padding: 2.5rem 10rem;
-  width: 100vw;
+  padding: 2.5rem;
   background-color: #495E57;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
 }
 
 .footer-title {
@@ -234,7 +232,6 @@
 }
 
 .footer-text {
-    display: block;
   text-decoration: none;
   color: #fff;
   margin: .25rem 0;
@@ -243,4 +240,3 @@
 .footer-img {
   width: 100px;
 }
-*/
