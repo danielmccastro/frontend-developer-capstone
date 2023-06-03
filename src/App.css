@@ -64,28 +64,7 @@
   color: white;
 }
 
-.btn {
-  text-align: center;
-  padding: 0.75rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #333;
-  background-color: #F4CE14;
-  text-decoration: none;
-  border: none;
-  border-radius: 8px;
-  margin-top: 5rem;
-  cursor: pointer;
-}
 
-.btn > a {
-  text-decoration: none;
-  color: #333;
-}
-
-.bg-green {
-  background-color: #495E57;
-}
 
 .color-black {
   color:#333;
@@ -209,6 +188,10 @@
 }
 */
 
+.bg-green {
+  background-color: #495E57;
+}
+
 .footer {
   padding: 2.5rem;
   background-color: #495E57;
@@ -235,8 +218,4 @@
   text-decoration: none;
   color: #fff;
   margin: .25rem 0;
-}
-
-.footer-img {
-  width: 100px;
 }
