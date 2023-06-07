@@ -3,45 +3,46 @@ import Button from "./Button";
 
 function Form() {
   return (
-    <main className="container">
+    <main>
+        <div className="container">
         <div className="row">
-            <h1 className="text-h1">Book a table</h1>
+            <h1 className="text-h1 mt-4">Book a table</h1>
         <div className="col-6">
       <div className="row">
         <form action="POST">
           <div className="row">
-            <div class="form-group col-6 mb-4">
+            <div className="form-group col-6 mb-4">
               <label for="exampleFormControlInput1">Name</label>
               <input
                 type="name"
-                class="form-control"
+                className="form-control"
                 id="nameInput"
                 placeholder="Name"
               />
             </div>
-            <div class="form-group col-6 mb-4">
+            <div className="form-group col-6 mb-4">
               <label for="exampleFormControlInput1">Email address</label>
               <input
                 type="email"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlInput1"
                 placeholder="name@example.com"
               />
             </div>
           </div>
           <div className="row">
-            <div class="form-group col-6 mb-4">
+            <div className="form-group col-6 mb-4">
               <label for="exampleFormControlInput1">Phone number</label>
               <input
                 type="name"
-                class="form-control"
+                className="form-control"
                 id="nameInput"
                 placeholder="Phone number"
               />
             </div>
-          <div class="form-group col-6 mb-4">
+          <div className="form-group col-6 mb-4">
             <label for="exampleFormControlSelect1">Dinners</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select className="form-control" id="exampleFormControlSelect1">
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -55,36 +56,36 @@ function Form() {
           </div>
           <fieldset className="mb-4">
             <label htmlFor="">Local da mesa</label>
-          <div class="form-check">
+          <div className="form-check">
             <input
-              class="form-check-input"
+              className="form-check-input"
               type="radio"
               name="flexRadioDefault"
               id="flexRadioDefault1"
               checked
             />
-            <label class="form-check-label" for="flexRadioDefault1">
+            <label className="form-check-label" for="flexRadioDefault1">
               Indoor
             </label>
           </div>
-          <div class="form-check">
+          <div className="form-check">
             <input
-              class="form-check-input"
+              className="form-check-input"
               type="radio"
               name="flexRadioDefault"
               id="flexRadioDefault2"
             />
-            <label class="form-check-label" for="flexRadioDefault2">
+            <label className="form-check-label" for="flexRadioDefault2">
               Outdoor
             </label>
           </div>
           </fieldset>
-          <div class="mb-4">
-            <label for="exampleFormControlTextarea1" class="form-label">
+          <div className="mb-4">
+            <label for="exampleFormControlTextarea1" className="form-label">
               Special requests
             </label>
             <textarea
-              class="form-control"
+              className="form-control"
               id="exampleFormControlTextarea1"
               rows="3"
             ></textarea>
@@ -95,6 +96,7 @@ function Form() {
       </div>
       <div className="col-6">
         <h4>img e texto</h4>
+      </div>
       </div>
       </div>
     </main>

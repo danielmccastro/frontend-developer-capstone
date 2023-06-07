@@ -3,9 +3,9 @@ import LittleLemonLogo from "../assets/Logo.png";
 
 function Header() {
   return (
-    <header>
+    <header className="navbar-border">
       <div className="container">
-        <nav class="navbar navbar-expand-lg">
+        <nav className="navbar navbar-expand-lg nav-bar-border">
           <div class="container-fluid">
             <a class="navbar-brand" href="">
               <img

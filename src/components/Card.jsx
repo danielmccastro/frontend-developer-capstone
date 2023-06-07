@@ -5,7 +5,7 @@ function Card(props){
 let loremText = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos fuga similique obcaecati labore cum quibusdam necessitatibus,veritatis corrupti at earum?"
 
     return (
-        <div className="col-12 col-md mx-4 mb-4">
+        <div className="col-12 col-md  mb-4">
         <div className="card h-100">
           <img
             src={props.src}
