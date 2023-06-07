@@ -1,4 +1,8 @@
 import React from "react";
+import Button from "./Button";
+import Card from "./Card";
+import Testimonials from "./Testimonials";
+
 import restaurantImg from "../assets/restaurant.jpg";
 import foodSalad from "../assets/food_salad.jpg";
 import foodDessert from "../assets/food_dessert.jpg";
@@ -23,9 +27,7 @@ function Main() {
                 nihil dolore quasi. Nisi officia quia ea inventore!
               </p>
               <a href="">
-                <button className="btn-reserve my-2 mt-md-5">
-                  Reserve a table
-                </button>
+                <Button content={"Reserve a table"} />
               </a>
             </span>
             <img
@@ -36,70 +38,28 @@ function Main() {
           </div>
         </div>
       </section>
-
       <section className="p-5">
         <div className="container">
           <h4 className="col-12 text-center mb-5">Specials</h4>
           <div className="specials row">
-            <div className="col-12 col-md mx-4 mb-4">
-              <div className="card h-100">
-                <img
-                  src={foodSalad}
-                  alt="Salad"
-                  className="card-img-top"
-                />
-                <div className="card-body">
-                  <div className="card-flex">
-                  <p className="card-title">Greek Salad</p>
-                  <p className="card-price">$ 2.75</p>
-                  </div>
-                  <p className="card-text">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos
-                  fuga similique obcaecati labore cum quibusdam necessitatibus,
-                  veritatis corrupti at earum?
-                </p>
-                </div>
-                <button className="btn-reserve">Order now</button>
-              </div>
-            </div>
-            <div className="col-12 col-md mx-4 mb-4">
-              <div className="card h-100">
-                <img src={foodMain} alt="Main" className="card-img-top" />
-                <div className="card-body">
-                <div className="card-flex">
-                  <p className="card-title">Bruschetta</p>
-                  <p className="card-price">$ 4.20</p>
-                  </div>
-                <p className="card-text">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos
-                  fuga similique obcaecati labore cum quibusdam necessitatibus,
-                  veritatis corrupti at earum?
-                </p>
-                </div>
-                <button className="btn-reserve">Order now</button>
-              </div>
-            </div>
-            <div className="col-12 col-md mx-4">
-              <div className="card h-100">
-                <img
-                  src={foodDessert}
-                  alt="Dessert"
-                  className="card-img-top"
-                />
-                <div className="card-body">
-                  <div className="card-flex">
-                  <p className="card-title">Lemon cake</p>
-                  <p className="card-price">$ 4.25</p>
-                  </div>
-                <p className="card-text">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos
-                  fuga similique obcaecati labore cum quibusdam necessitatibus,
-                  veritatis corrupti at earum?
-                </p>
-                </div>
-                <button className="btn-reserve">Order now</button>
-              </div>
-            </div>
+            <Card
+              src={foodSalad}
+              alt={"Salad"}
+              title={"Greek Salad"}
+              price={"$ 2.75"}
+            />
+            <Card
+              src={foodMain}
+              alt={"Main"}
+              title={"Bruschetta"}
+              price={"$ 4.20"}
+            />
+            <Card
+              src={foodDessert}
+              alt={"Dessert"}
+              title={"Lemon cake"}
+              price={"$ 4.25"}
+            />
           </div>
         </div>
       </section>
@@ -108,45 +68,21 @@ function Main() {
         <div className="container">
           <div className="row">
             <div className="testimonials row">
-              <div className="card-testimonials border col-12 col-md mx-4">
-                <h4 className="testimonials-title">★ 4.9</h4>
-                <img
-                  src={pictureOne}
-                  alt="First review photo"
-                  className="img-fluid testimonials-img"
-                />
-                <p className="card-content">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Accusantium dolorum pariatur eius quia doloribus numquam vero
-                  vitae laborum consequuntur voluptatum.
-                </p>
-              </div>
-              <div className="card-testimonials border col-12 col-md mx-4">
-                <h4 className="testimonials-title">★ 5.0</h4>
-                <img
-                  src={pictureTwo}
-                  alt="Second review photo"
-                  className="testimonials-img img-fluid"
-                />
-                <p className="card-content">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Accusantium dolorum pariatur eius quia doloribus numquam vero
-                  vitae laborum consequuntur voluptatum.
-                </p>
-              </div>
-              <div className="card-testimonials border col-12 col-md mx-4">
-                <h4 className="testimonials-title">★ 4.7</h4>
-                <img
-                  src={pictureThree}
-                  alt="Third review photo"
-                  className="testimonials-img img-fluid"
-                />
-                <p className="card-content">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Accusantium dolorum pariatur eius quia doloribus numquam vero
-                  vitae laborum consequuntur voluptatum.
-                </p>
-              </div>
+              <Testimonials
+                ranking={"4.9"}
+                src={pictureOne}
+                alt={"First review photo"}
+              />
+              <Testimonials
+                ranking={"5.0"}
+                src={pictureTwo}
+                alt={"Second review photo"}
+              />
+              <Testimonials
+                ranking={"4.7"}
+                src={pictureThree}
+                alt={"Third review photo"}
+              />
             </div>
           </div>
         </div>
