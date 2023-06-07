@@ -1,6 +1,3 @@
-/* #EDEFEE, #495E57
-*/
-
 * {
   margin: 0;
   padding: 0;
@@ -25,83 +22,6 @@
 .navbar a:visited {
   text-decoration: none;
 }
-
-/*
-.main-content {
-  background-color: #FFF;
-}
-
-.color-black {
-  color:#333;
-  text-align: center;
-  padding: 3rem;
-}
-
-
-
-
-
-.card-content {
-  width: 300px;
-  padding: 0 1.5rem 1.5rem;
-  font-family: "Karla";
-}
-
-
-
-.about-description {
-  margin: 2rem 5rem;
-  width: 70%;
-}
-
-.testimonials {
-  display: flex;
-  margin-bottom: 3rem;
-  justify-content: space-evenly;
-}
-
-.card-testimonials {
-  background-color: #EDEFEE;
-  filter: drop-shadow(16px 16px 10px rgba(0, 0, 0, 0.35));
-  margin-bottom: 5rem;
-  max-width: 300px;
-}
-
-.testimonials-title {
-  padding: 1.5rem;
-  width:100%;
-}
-
-.testimonials-img {
-  padding: 1.5rem;
-  margin: 1rem;
-  border-radius: 50%;
-  max-width: 100%;
-  margin: auto;
-}
-
-.testimonials-feedback {
-  max-width: 100%;
-  margin: auto;
-}
-
-.about-section {
-  display: flex;
-  padding: 5rem;
-  justify-content: space-around;
-}
-
-.text-black {
-  color: black;
-}
-
-.about-img {
-  width: 100%;
-  margin: 2rem;
-  border-radius: 20px;
-  filter: drop-shadow(16px 16px 10px rgba(0, 0, 0, 0.35));
-}
-*/
 
 .bg-green {
   background-color: #495E57;
