@@ -13,6 +13,7 @@ import pictureThree from "../assets/profile03.jpg";
 import marioAndAdrian from "../assets/marioandadrian.jpg";
 
 function Main() {
+
   return (
     <main>
       <section className="hero-section bg-green p-5">
