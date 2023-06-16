@@ -8,11 +8,12 @@ import Booking from "./pages/Booking";
 import BookingConfirmation from "./pages/BookingConfirmation"
 import Footer from "./components/Footer";
 
-import {Route, Routes} from "react-router-dom"
+import {Route, Routes, BrowserRouter} from "react-router-dom"
 
 function App() {
   return (
     <>
+    <BrowserRouter>
       <Header />
       <Routes>
       <Route path="/" exact element={<Main />} />
@@ -20,6 +21,7 @@ function App() {
       <Route path="/confirmation" exact element={<BookingConfirmation />} />
       </Routes>
       <Footer />
+      </BrowserRouter>
     </>
   );
 }

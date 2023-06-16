@@ -1,31 +1,43 @@
 import React, { useState } from "react";
-import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 
-function Form() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [date, setDate] = useState(new Date());
-  const availableTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-  const [guests, setGuests] = useState("");
-  const [occasion, setOccasion] = useState("");
+function BookingForm({ availableTimes, dispatch, submitForm }) {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    date: "",
+    time: "",
+    guests: 1,
+    occasion: "Select an Option",
+  });
+
+  const handleFormChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
+  const handleDateChange = async (event) => {
+    const { name, value } = event.target;
+
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+    dispatch({ type: "UPDATE_TIMES", payload: value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(
-      "Your booking is confirmed! A confirmation has been sent to your e-mail!"
-    );
-    clearForm();
+    submitForm(formData);
   };
 
-  const clearForm = () => {
-    setName("");
-    setEmail("");
-    setDate("");
-    setGuests("");
-    setOccasion("");
-  };
-
-  console.log(occasion);
+  const currentDate = new Date().toISOString().split("T")[0];
+  const options = availableTimes.map((time) => (
+    <option key={time}>{time}</option>
+  ));
 
   return (
     <main className="container">
@@ -39,11 +51,11 @@ function Form() {
             <input
               type="text"
               id="res-name"
+              name="name"
               className="form-control"
-              value={name}
-              onChange={(e) => {
-                setName(e.target.value);
-              }}
+              value={formData.name}
+              onChange={handleFormChange}
+              required
             />
           </div>
           <div className="mb-3">
@@ -53,11 +65,11 @@ function Form() {
             <input
               type="email"
               id="res-email"
+              name="email"
               className="form-control"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
+              value={formData.email}
+              onChange={handleFormChange}
+              required
             />
           </div>
           <div className="mb-3">
@@ -67,24 +79,24 @@ function Form() {
             <input
               type="date"
               id="res-date"
+              name="date"
               className="form-control"
-              value={date}
-              onChange={(e) => {
-                setDate(e.target.value);
-              }}
+              value={formData.date}
+              onChange={handleDateChange}
+              min={currentDate}
+              required
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="res-time" className="form-label">
-              Choose time
-            </label>
-            <select id="res-time" className="form-select">
-              <option>17:00</option>
-              <option>18:00</option>
-              <option>19:00</option>
-              <option>20:00</option>
-              <option>21:00</option>
-              <option>22:00</option>
+            <label htmlFor="res-time">Choose time</label>
+            <select
+              id="res-time"
+              name="time"
+              value={formData.availableTimes}
+              onChange={handleFormChange}
+              required
+            >
+              {options}
             </select>
           </div>
           <div className="mb-3">
@@ -97,11 +109,10 @@ function Form() {
               min="1"
               max="10"
               id="guests"
+              name="guests"
               className="form-control"
-              value={guests}
-              onChange={(e) => {
-                setGuests(e.target.value);
-              }}
+              value={formData.guests}
+              onChange={handleFormChange}
             />
           </div>
           <div className="mb-3">
@@ -110,10 +121,11 @@ function Form() {
             </label>
             <select
               id="occasion"
+              name="occasion"
               className="form-select"
-              key={occasion}
-              value={occasion}
-              onChange={(e) => setOccasion(e.target.value)}
+              key={formData.occasion}
+              value={formData.occasion}
+              onChange={handleFormChange}
               required
             >
               <option value="">Select an Option</option>
@@ -135,4 +147,4 @@ function Form() {
   );
 }
 
-export default Form;
+export default BookingForm;

@@ -28,7 +28,7 @@ function Main() {
                 nihil dolore quasi. Nisi officia quia ea inventore!
               </p>
               <a href="">
-                <Button content={"Reserve a table"} />
+                <Button content={"Reserve a table"} route="/booking"/>
               </a>
             </span>
             <img
