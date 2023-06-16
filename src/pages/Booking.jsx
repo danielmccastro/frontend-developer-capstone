@@ -3,24 +3,24 @@ import { useState, useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 
 import BookingForm from "../components/BookingForm";
-import { fetchData, submitData } from "../api";
+import { fetchAPI, submitAPI } from "../api";
 
 const Booking = (props) => {
   const [date, setDate] = useState(new Date());
 
   function initializeTimes(date) {
-    return fetchData(date);
+    return fetchAPI(date);
   }
 
   function updateTimes(date) {
     const updatedDate = new Date(date);
-    return fetchData(updatedDate);
+    return fetchAPI(updatedDate);
   }
 
   const confirmationPage = useNavigate();
 
   function submitForm(formData) {
-    const isSubmitted = submitData(formData);
+    const isSubmitted = submitAPI(formData);
     if (isSubmitted) {
       confirmationPage("/confirmation");
     }
@@ -43,11 +43,13 @@ const Booking = (props) => {
   const [availableTimes, dispatch] = useReducer(reducer, initializeTimes(date));
 
   return (
-    <BookingForm
-      availableTimes={availableTimes}
-      dispatch={dispatch}
-      submitForm={submitForm}
-    />
+    <>
+      <BookingForm
+        availableTimes={availableTimes}
+        dispatch={dispatch}
+        submitForm={submitForm}
+      />
+    </>
   );
 };
 

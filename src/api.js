@@ -7,7 +7,7 @@ const seededRandom = function (seed) {
     };
 }
 
-export function fetchData(date) {
+export function fetchAPI(date) {
     let result = [];
     let random = seededRandom(date.getDate());
 
@@ -21,6 +21,6 @@ export function fetchData(date) {
     }
     return result;
 };
-export function submitData(formData) {
+export function submitAPI(formData) {
     return true;
 };
