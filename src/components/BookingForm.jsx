@@ -4,7 +4,7 @@ import Button from "./Button";
 function Form() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState(new Date());
   const availableTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
   const [guests, setGuests] = useState("");
   const [occasion, setOccasion] = useState("");

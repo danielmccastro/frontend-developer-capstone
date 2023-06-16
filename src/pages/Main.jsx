@@ -1,7 +1,7 @@
 import React from "react";
-import Button from "./Button";
-import Card from "./Card";
-import Testimonials from "./Testimonials";
+import Button from "../components/Button";
+import Card from "../components/Card";
+import Testimonials from "../components/Testimonials";
 
 import restaurantImg from "../assets/restaurant.jpg";
 import foodSalad from "../assets/food_salad.jpg";
