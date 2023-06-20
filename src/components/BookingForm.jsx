@@ -1,36 +1,53 @@
 import React, { useState } from "react";
 
 function BookingForm({ availableTimes, dispatch, submitForm }) {
-  const [formData, setFormData] = useState({
+  const [form, setForm] = useState({
     name: "",
     email: "",
     date: "",
     time: "",
-    guests: 1,
-    occasion: "Select an Option",
+    guests: "",
+    occasion: "",
   });
 
-  const handleFormChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
+  const [errors, setErrors] = useState({});
+
+  const handleFormChange = (field, value) => {
+    setForm({
+      ...form,
+      [field]: value,
+    });
   };
 
-  const handleDateChange = async (e) => {
-    const { name, value } = e.target;
-
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
+  const handleDateChange = async (field, value) => {
+    setForm({
+      ...form,
+      [field]: value,
+    });
     dispatch({ type: "UPDATE_TIMES", payload: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    submitForm(formData);
+    const formErrors = validateForm();
+    if (Object.keys(formErrors).length > 0) {
+      setErrors(formErrors);
+    } else {
+      submitForm(form);
+    }
+  };
+
+  const validateForm = () => {
+    const { name, email, date, time, guests, occasion } = form;
+    const newErrors = {};
+    if (name === "" || date === "" || time === "" || occasion === "") {
+      newErrors.required = "Required.";
+    } else if (email === "") {
+      newErrors.email = "Please enter a valid email address";
+    } else if (guests === "") {
+      newErrors.guests = "Must be min 1 and max 10 guests";
+    }
+    return newErrors;
   };
 
   const currentDate = new Date().toISOString().split("T")[0];
@@ -53,9 +70,10 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                 id="res-name"
                 name="name"
                 className="form-control bg-gray"
-                value={formData.name}
-                onChange={handleFormChange}
+                value={form.name}
+                onChange={(e) => handleFormChange("name", e.target.value)}
                 required
+                isInvaliid={!!errors.name}
               />
             </div>
             <div className="mb-3">
@@ -67,9 +85,10 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                 id="res-email"
                 name="email"
                 className="form-control bg-gray"
-                value={formData.email}
-                onChange={handleFormChange}
+                value={form.email}
+                onChange={(e) => handleFormChange("email", e.target.value)}
                 required
+                isInvaliid={!!errors.email}
               />
             </div>
             <div className="mb-3">
@@ -81,20 +100,22 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                 id="res-date"
                 name="date"
                 className="form-control bg-gray"
-                value={formData.date}
-                onChange={handleDateChange}
+                value={form.date}
+                onChange={(e) => handleDateChange("date", e.target.value)}
                 min={currentDate}
+                isInvaliid={!!errors.date}
                 required
               />
             </div>
             <div className="mb-3">
               <label htmlFor="res-time">Choose time</label>
               <select
-              className="form-select bg-gray"
+                className="form-select bg-gray"
                 id="res-time"
                 name="time"
-                value={formData.availableTimes}
-                onChange={handleFormChange}
+                value={form.availableTimes}
+                onChange={(e) => handleFormChange("time", e.target.value)}
+                isInvaliid={!!errors.time}
                 required
               >
                 {options}
@@ -112,8 +133,9 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                 id="guests"
                 name="guests"
                 className="form-control bg-gray"
-                value={formData.guests}
-                onChange={handleFormChange}
+                value={form.guests}
+                onChange={(e) => handleFormChange("guests", e.target.value)}
+                isInvaliid={!!errors.guests}
               />
             </div>
             <div className="mb-3">
@@ -124,9 +146,10 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                 id="occasion"
                 name="occasion"
                 className="form-select bg-gray"
-                key={formData.occasion}
-                value={formData.occasion}
-                onChange={handleFormChange}
+                key={form.occasion}
+                value={form.occasion}
+                onChange={(e) => handleFormChange("occasion", e.target.value)}
+                isInvaliid={!!errors.occasion}
                 required
               >
                 <option value="">Select an Option</option>

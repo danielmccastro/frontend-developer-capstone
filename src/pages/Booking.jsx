@@ -1,12 +1,12 @@
 import React from "react";
-import { useState, useReducer } from "react";
+import { useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 
 import BookingForm from "../components/BookingForm";
 import { fetchAPI, submitAPI } from "../api";
 
 const Booking = (props) => {
-  const [date, setDate] = useState(new Date());
+  const date = new Date();
 
   function initializeTimes(date) {
     return fetchAPI(date);

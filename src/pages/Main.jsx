@@ -27,13 +27,11 @@ function Main() {
                 Recusandae dolorem molestias nulla aperiam earum quae aliquid et
                 nihil dolore quasi. Nisi officia quia ea inventore!
               </p>
-              <a href="">
                 <Button content={"Reserve a table"} route="/booking"/>
-              </a>
             </span>
             <img
               src={restaurantImg}
-              alt="Restaurant image"
+              alt="Restaurant"
               className="hero-img col-12 col-md-6 mt-4"
             />
           </div>

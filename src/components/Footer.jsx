@@ -13,22 +13,22 @@ function Footer() {
           />
           <div className="col">
             <h4 className="footer-title">Navigation</h4>
-            <a href="" className="footer-link">
+            <a href="/" className="footer-link">
               Home
             </a>
-            <a href="" className="footer-link">
+            <a href="/" className="footer-link">
               About
             </a>
-            <a href="" className="footer-link">
+            <a href="/" className="footer-link">
               Menu
             </a>
-            <a href="" className="footer-link">
+            <a href="/booking" className="footer-link">
               Reservations
             </a>
-            <a href="" className="footer-link">
+            <a href="/" className="footer-link">
               Order Online
             </a>
-            <a href="" className="footer-link">
+            <a href="/" className="footer-link">
               Login
             </a>
           </div>
@@ -40,13 +40,13 @@ function Footer() {
           </div>
           <div className="col">
             <h4 className="footer-title">Social Media Links</h4>
-            <a href="" className="footer-link">
+            <a href="/" className="footer-link">
               Instagram
             </a>
-            <a href="" className="footer-link">
+            <a href="/" className="footer-link">
               Facebook
             </a>
-            <a href="" className="footer-link">
+            <a href="/" className="footer-link">
               Twitter
             </a>
           </div>

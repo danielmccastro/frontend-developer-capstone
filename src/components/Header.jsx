@@ -7,7 +7,7 @@ function Header() {
       <div className="container">
         <nav className="navbar navbar-expand-lg nav-bar-border">
           <div className="container-fluid">
-            <a className="navbar-brand" href="">
+            <a className="navbar-brand" href="/">
               <img
                 className="header-logo"
                 src={LittleLemonLogo}
@@ -31,32 +31,32 @@ function Header() {
             >
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <a className="nav-link" href="">
+                  <a className="nav-link" href="/">
                     Home
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="">
+                  <a className="nav-link" href="/">
                     About
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="">
+                  <a className="nav-link" href="/">
                     Menu
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="">
+                  <a className="nav-link" href="/booking">
                     Reservations
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="">
+                  <a className="nav-link" href="/">
                     Order Online
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="">
+                  <a className="nav-link" href="/">
                     Login
                   </a>
                 </li>
