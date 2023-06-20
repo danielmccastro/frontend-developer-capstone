@@ -10,8 +10,6 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
     occasion: "",
   });
 
-  const [errors, setErrors] = useState({});
-
   const handleFormChange = (field, value) => {
     setForm({
       ...form,
@@ -29,31 +27,14 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formErrors = validateForm();
-    if (Object.keys(formErrors).length > 0) {
-      setErrors(formErrors);
-    } else {
-      submitForm(form);
-    }
-  };
+    submitForm(form);
+    };
 
-  const validateForm = () => {
-    const { name, email, date, time, guests, occasion } = form;
-    const newErrors = {};
-    if (name === "" || date === "" || time === "" || occasion === "") {
-      newErrors.required = "Required.";
-    } else if (email === "") {
-      newErrors.email = "Please enter a valid email address";
-    } else if (guests === "") {
-      newErrors.guests = "Must be min 1 and max 10 guests";
-    }
-    return newErrors;
-  };
-
-  const currentDate = new Date().toISOString().split("T")[0];
   const options = availableTimes.map((time) => (
     <option key={time}>{time}</option>
   ));
+
+console.log(form)
 
   return (
     <main className="container">
@@ -61,7 +42,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         <div className="col-4 mx-auto">
           <h1 className="mt-4 text-h1">Reserve a table</h1>
           <form className="mb-4 text-karla" onSubmit={handleSubmit}>
-            <div className="mb-3">
+           <div className="mb-3">
               <label htmlFor="res-name" className="form-label">
                 Name
               </label>
@@ -73,7 +54,6 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                 value={form.name}
                 onChange={(e) => handleFormChange("name", e.target.value)}
                 required
-                isInvaliid={!!errors.name}
               />
             </div>
             <div className="mb-3">
@@ -88,7 +68,6 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                 value={form.email}
                 onChange={(e) => handleFormChange("email", e.target.value)}
                 required
-                isInvaliid={!!errors.email}
               />
             </div>
             <div className="mb-3">
@@ -102,8 +81,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                 className="form-control bg-gray"
                 value={form.date}
                 onChange={(e) => handleDateChange("date", e.target.value)}
-                min={currentDate}
-                isInvaliid={!!errors.date}
+                min={new Date().toISOString().split("T")[0]}
                 required
               />
             </div>
@@ -115,7 +93,6 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                 name="time"
                 value={form.availableTimes}
                 onChange={(e) => handleFormChange("time", e.target.value)}
-                isInvaliid={!!errors.time}
                 required
               >
                 {options}
@@ -135,7 +112,6 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                 className="form-control bg-gray"
                 value={form.guests}
                 onChange={(e) => handleFormChange("guests", e.target.value)}
-                isInvaliid={!!errors.guests}
               />
             </div>
             <div className="mb-3">
@@ -149,7 +125,6 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                 key={form.occasion}
                 value={form.occasion}
                 onChange={(e) => handleFormChange("occasion", e.target.value)}
-                isInvaliid={!!errors.occasion}
                 required
               >
                 <option value="">Select an Option</option>
