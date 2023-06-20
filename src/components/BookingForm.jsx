@@ -39,7 +39,7 @@ console.log(form)
   return (
     <main className="container">
       <div className="row">
-        <div className="col-4 mx-auto">
+        <div className="col-10 col-md-5 mx-auto">
           <h1 className="mt-4 text-h1">Reserve a table</h1>
           <form className="mb-4 text-karla" onSubmit={handleSubmit}>
            <div className="mb-3">
