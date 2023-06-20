@@ -31,6 +31,10 @@
   background-color: #495E57;
 }
 
+.bg-gray {
+  background: #edefee!important;
+}
+
 .hero-img {
   border-radius: 20px;
   filter: drop-shadow(16px 16px 10px rgba(0, 0, 0, 0.35));
@@ -70,6 +74,10 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.btn-reserve:hover {
+  transform: scale(105%);
 }
 
 .specials {
@@ -115,6 +123,11 @@
 .testimonials-feedback {
   max-width: 100%;
   margin: auto;
+}
+
+.confirmation-icon {
+  display: block;
+  margin: 2rem auto;
 }
 
 .footer {
